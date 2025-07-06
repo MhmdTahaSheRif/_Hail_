@@ -1,0 +1,25 @@
+/* Dark Mode Toggle */
+.dark-mode {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+.dark-mode .navbar {
+  background-color: #222 !important;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.dark-mode .form-control {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.dark-mode .btn-light {
+  background-color: #444;
+  color: #fff;
+}

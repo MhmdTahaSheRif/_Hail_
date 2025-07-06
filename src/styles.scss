@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+.dark-mode .card {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .form-control {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}

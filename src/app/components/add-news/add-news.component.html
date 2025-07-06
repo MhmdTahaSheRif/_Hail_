@@ -1,0 +1,107 @@
+<div class="container-fluid bg-body-tertiary min-vh-100 py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10 col-xl-8">
+      <div class="card shadow-sm border-0 rounded-4 p-4 bg-white">
+        <h2 class="text-center text-primary fw-bold border-bottom pb-3 mb-4">
+          📝 Add News
+        </h2>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label for="title" class="form-label fw-semibold">🖋️ Title</label>
+              <input
+                type="text"
+                id="title"
+                formControlName="title"
+                class="form-control rounded-3"
+                placeholder="Enter news title"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="publishDate" class="form-label fw-semibold"
+                >📅 Publish Date</label
+              >
+              <input
+                type="date"
+                id="publishDate"
+                formControlName="publishDate"
+                class="form-control rounded-3"
+                placeholder="mm/dd/yyyy"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="summary" class="form-label fw-semibold"
+                >📰 Summary</label
+              >
+              <textarea
+                id="summary"
+                formControlName="summary"
+                class="form-control rounded-3"
+                rows="3"
+                placeholder="Brief summary of the news"
+              ></textarea>
+            </div>
+
+            <div class="col-12">
+              <label for="content" class="form-label fw-semibold"
+                >📄 Content</label
+              >
+              <textarea
+                id="content"
+                formControlName="content"
+                class="form-control rounded-3"
+                rows="5"
+                placeholder="Full news content"
+              ></textarea>
+            </div>
+
+            <div class="col-md-6">
+              <label for="tags" class="form-label fw-semibold">🏷️ Tags</label>
+              <input
+                type="text"
+                id="tags"
+                formControlName="tags"
+                class="form-control rounded-3"
+                placeholder="Comma separated (e.g., news, tech)"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="image" class="form-label fw-semibold"
+                >🖼️ Upload Image</label
+              >
+              <input
+                type="file"
+                id="image"
+                class="form-control rounded-3"
+                (change)="onImageSelected($event)"
+              />
+            </div>
+
+            <div *ngIf="imagePreview" class="col-12 text-center mt-3">
+              <p class="fw-bold text-muted mb-2">Image Preview</p>
+              <img
+                [src]="imagePreview"
+                class="img-fluid rounded shadow-sm"
+                style="max-height: 300px"
+              />
+            </div>
+
+            <div class="col-12 mt-4">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg w-100 rounded-3 shadow"
+                [disabled]="form.invalid"
+              >
+                ➕ Submit News
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

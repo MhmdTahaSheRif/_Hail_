@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between mb-3">
+    <input
+      type="text"
+      class="form-control w-50"
+      placeholder="Search news..."
+      (input)="handleSearch($event)"
+    />
+    <a routerLink="/add" class="btn btn-primary">Add News</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let n of news">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ n.title }}</h5>
+          <p class="card-text">{{ n.summary }}</p>
+          <p class="text-muted small">{{ n.publishDate }}</p>
+          <button
+            class="btn btn-sm btn-outline-primary"
+            (click)="readMore(n.id)"
+          >
+            Read More
+          </button>
+          <button
+            class="btn btn-sm btn-outline-danger float-end"
+            (click)="archive(n.id)"
+          >
+            Archive
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
